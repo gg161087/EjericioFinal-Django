@@ -17,7 +17,7 @@ class Pelicula(models.Model):
         return self.titulo
 
     def get_absolute_url(self):
-        return reverse('pelicula-detalle', args=[str(self.id)])
+        return reverse('pelicula-detail', args=[str(self.id)])
 
 class Director(models.Model):
     nombre = models.CharField(max_length=100)
@@ -26,7 +26,7 @@ class Director(models.Model):
     fecha_de_defuncion = models.DateField('Difunto', null=True, blank=True)
 
     def get_absolute_url(self):
-        return reverse('director-detalle', args=[str(self.id)])
+        return reverse('director-detail', args=[str(self.id)])
 
     def __str__(self):
-        return '%s, %s' % (self.apellido, self.nombre)      
+        return '%s, %s' % (self.apellido, self.nombre)
